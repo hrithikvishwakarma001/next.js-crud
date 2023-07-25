@@ -15,13 +15,16 @@ export default function EditForm() {
 			return alert("Please add title and description");
 		}
 		try {
-			let res = await fetch("http://localhost:3000/api/todos/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(state),
-			});
+			let res = await fetch(
+				"https://next-js-crud-black.vercel.app/api/todos/",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(state),
+				}
+			);
 			if (!res.ok) {
 				throw new Error("Failed to add todo");
 			}
