@@ -7,13 +7,16 @@ const updateTodo = async (id, newTitleAndDescription) => {
 	const confirm = window.confirm("Are you sure you want to edit this todo?");
 	if (!confirm) return;
 	try {
-		const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(newTitleAndDescription),
-		});
+		const res = await fetch(
+			`https://next-js-crud-black.vercel.app/api/todos/${id}`,
+			{
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(newTitleAndDescription),
+			}
+		);
 		return res
 	} catch (error) {
 		console.log(error);

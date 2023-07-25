@@ -9,9 +9,12 @@ import DateFormatter from "./DateFormatter";
 
 const getTodos = async () => {
 	try {
-		const res = await fetch("http://localhost:3000/api/todos/", {
-			cache: "no-cache",
-		});
+		const res = await fetch(
+			"https://next-js-crud-black.vercel.app/api/todos/",
+			{
+				cache: "no-cache",
+			}
+		);
 
 		if (!res.ok) {
 			throw new Error("Failed to fetch todos");
@@ -42,7 +45,7 @@ const TodoList = async () => {
 		if (!confirm) return;
 		try {
 			const res = await fetch(
-				`http://localhost:3000/api/todos?id=${id}`,
+				`https://next-js-crud-black.vercel.app/todos?id=${id}`,
 				{
 					method: "DELETE",
 				}
