@@ -1,7 +1,9 @@
 import EditForm from "@/app/components/EditForm";
 const getTodoById = async (id) => {
 	try {
-		const res = await fetch(`http://localhost:3000/api/todos/${id}`);
+		const res = await fetch(
+			`https://next-js-crud-black.vercel.app/api/todos/${id}`
+		);
 		if (!res.ok) {
 			throw new Error("Failed to fetch todos");
 		}
